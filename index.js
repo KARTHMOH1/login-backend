@@ -1,6 +1,7 @@
 const express = require ("express")
 const app = express()
 const cors = require ("cors")
+const PORT = process.env.PORT || 5000 
 app.use(cors({ origin: "https://login-frontend-beta.vercel.app/" })); // Replace with your Vercel URL
 
 
@@ -28,6 +29,6 @@ app.post("/login",function(req,res){
 
 })
 
-app.listen(3000,function(){
+app.listen(PORT,function(){
     console.log("Server Started............................")
 })
