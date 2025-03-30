@@ -1,7 +1,7 @@
 const express = require ("express")
 const app = express()
 const cors = require ("cors")
-app.use(cors({ origin: "https://your-vercel-app.vercel.app" })); // Replace with your Vercel URL
+app.use(cors({ origin: "https://login-frontend-beta.vercel.app/" })); // Replace with your Vercel URL
 
 
 var uname="karthik"
