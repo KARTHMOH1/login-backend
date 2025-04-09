@@ -1,33 +1,27 @@
-const express = require ("express")
+const express = require("express")
 const app = express()
-const PORT = process.env.PORT || 3000 
-const cors = require ("cors")
-app.use(cors({ origin: "https://login-frontend-rho.vercel.app/" }));
+const cors=require("cors")
+const PORT = process.env.PORT || 3000;
 
-var uname="karthik"
-var pass=123
-
+const uname = "karthik"
+const upass = "123"
+app.use(cors())
 app.use(express.json())
-
+app.listen(PORT, () => {
+    console.log("Server started...................")
+})
 app.use(express.urlencoded({extended:true}))
-
-app.post("/login",function(req,res){
-
-    console.log(req.body)
-
-    const username=req.body.username
-    const password=req.body.password
-
-    if(uname===username && pass==password){
+app.post("/login", (req, res) => {
+    const {username,password}=req.body
+    if (username === uname && password === upass)
+    {
         res.send(true)
-        console.log("Login Successfull")
-    }else{
-        res.send(false)
-        console.log("Login UnSuccessfull")
+
     }
-
+    else {
+        res.send(false)
+    }
 })
-
-app.listen(PORT,function(){
-    console.log("Server Started............................")
-})
+app.get("/", (req, res) => {
+    res.send("Backend is running successfully! 🎉");
+});
