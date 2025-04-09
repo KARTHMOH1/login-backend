@@ -2,7 +2,7 @@ const express = require ("express")
 const app = express()
 const PORT = process.env.PORT || 3000 
 const cors = require ("cors")
-app.use(cors());
+app.use(cors({ origin: "https://login-frontend-rho.vercel.app/" }));
 
 var uname="karthik"
 var pass=123
